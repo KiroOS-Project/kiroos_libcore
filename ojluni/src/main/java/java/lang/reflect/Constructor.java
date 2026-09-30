@@ -139,6 +139,22 @@ public final class Constructor<T> extends AbstractMethod implements
         return super.getParameterTypes();
     }
 
+    /**
+     * Returns the number of formal parameters (whether explicitly declared or implicitly
+     * declared or neither) for the constructor represented by this object.
+     *
+     * KiroOS: Executable.getParameterCount() arrived in Android 8 (API 26); Jackson calls it
+     * on every constructor it inspects, and on Android 7 the missing method stopped apps
+     * using it during startup (3DMark stuck on its splash screen). Hidden from the SDK API.
+     *
+     * @return The number of formal parameters for the constructor this object represents
+     * @since 1.8
+     * @hide
+     */
+    public int getParameterCount() {
+        return super.getParameterCountInternal();
+    }
+
 
     /**
      * Returns an array of {@code Type} objects that represent the formal

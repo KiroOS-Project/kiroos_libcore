@@ -172,6 +172,15 @@ public abstract class AbstractMethod extends AccessibleObject {
     }
 
     /**
+     * KiroOS: the number of formal parameters, read from the dex without resolving their
+     * types. Backs Method/Constructor.getParameterCount() (Executable, API 26).
+     */
+    int getParameterCountInternal() {
+        Dex dex = declaringClassOfOverriddenMethod.getDex();
+        return dex.parameterTypeIndicesFromMethodIndex(dexMethodIndex).length;
+    }
+
+    /**
      * Returns true if {@code other} has the same declaring class, name,
      * parameters and return type as this method.
      */

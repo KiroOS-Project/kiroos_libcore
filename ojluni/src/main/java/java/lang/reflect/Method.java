@@ -194,6 +194,22 @@ public final
     }
 
     /**
+     * Returns the number of formal parameters (whether explicitly declared or implicitly
+     * declared or neither) for the method represented by this object.
+     *
+     * KiroOS: Executable.getParameterCount() arrived in Android 8 (API 26); libraries built for
+     * current Java (Jackson) call it on any version, and on Android 7 the missing method
+     * stopped those apps during startup. Hidden from the SDK API.
+     *
+     * @return The number of formal parameters for the method this object represents
+     * @since 1.8
+     * @hide
+     */
+    public int getParameterCount() {
+        return super.getParameterCountInternal();
+    }
+
+    /**
      * Returns an array of {@code Type} objects that represent the formal
      * parameter types, in declaration order, of the method represented by
      * this {@code Method} object. Returns an array of length 0 if the

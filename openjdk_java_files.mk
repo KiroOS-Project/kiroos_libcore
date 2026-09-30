@@ -122,6 +122,8 @@ openjdk_javadoc_files := \
     ojluni/src/main/java/java/lang/Class.java \
     ojluni/src/main/java/java/lang/ClassLoader.java \
     ojluni/src/main/java/java/lang/ClassNotFoundException.java \
+    ojluni/src/main/java/java/lang/BootstrapMethodError.java \
+    ojluni/src/main/java/java/lang/ClassValue.java \
     ojluni/src/main/java/java/lang/Cloneable.java \
     ojluni/src/main/java/java/lang/CloneNotSupportedException.java \
     ojluni/src/main/java/java/lang/Comparable.java \
